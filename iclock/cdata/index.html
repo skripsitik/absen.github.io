@@ -8,16 +8,19 @@ const urlParams = new URLSearchParams(queryString);
 const SN = urlParams.get('SN');
 console.log(SN);
 
-const fs = require('fs');
-  
-// Data which will write in a file.
-let data = "Learning how to write in a file.";
-  
-// Write data in 'Output.txt' .
-fs.writeFile('Output.txt', data, (err) => {
-      
-    // In case of a error throw err.
-    if (err) throw err;
-})
+//https://script.google.com/macros/s/AKfycbz2jc_3iMMcd5EugVpOYF1oPMzR_zCNf0r7llTmfxwWBmjZ34USckkFNG1z6ov0yA6YHA/exec?sheetid=1WNVDA1eV_0Ovg2J0PO0OzcJcPMK3yBKLKfX7XWYgTjQ&tabel=user&aksi=tambah
+
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+        var response = xhttp.responseText;
+        console.log("ok"+response);
+    }
+};
+xhttp.open("GET", "https://script.google.com/macros/s/AKfycbz2jc_3iMMcd5EugVpOYF1oPMzR_zCNf0r7llTmfxwWBmjZ34USckkFNG1z6ov0yA6YHA/exec?sheetid=1WNVDA1eV_0Ovg2J0PO0OzcJcPMK3yBKLKfX7XWYgTjQ&tabel=user&aksi=tambah", true);
+
+xhttp.send();
 
 </script>

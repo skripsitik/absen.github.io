@@ -1,1 +1,11 @@
-cdata
+<script>
+
+const queryString = window.location.search;
+console.log(queryString);
+
+const urlParams = new URLSearchParams(queryString);
+
+const SN = urlParams.get('SN');
+console.log(SN);
+
+</script>

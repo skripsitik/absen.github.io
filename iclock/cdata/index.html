@@ -26,18 +26,14 @@ console.log(SN);
 // xhttp.send();
 
 
-var http = new XMLHttpRequest();
- var url = "https://script.google.com/macros/s/AKfycbz2jc_3iMMcd5EugVpOYF1oPMzR_zCNf0r7llTmfxwWBmjZ34USckkFNG1z6ov0yA6YHA/exec?sheetid=1WNVDA1eV_0Ovg2J0PO0OzcJcPMK3yBKLKfX7XWYgTjQ&tabel=user&aksi=tambah";
- var params = 'NAMA=DFGHJ+FGHJ&PASSWORD=12345';
-
- http.open("POST", url, true);
-
- http.onreadystatechange = function() {
-    if(http.readyState == 4 && http.status == 200) {
-        alert(http.responseText);
-    }
- }
- http.send(params);
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://script.google.com/macros/s/AKfycbz2jc_3iMMcd5EugVpOYF1oPMzR_zCNf0r7llTmfxwWBmjZ34USckkFNG1z6ov0yA6YHA/exec?sheetid=1WNVDA1eV_0Ovg2J0PO0OzcJcPMK3yBKLKfX7XWYgTjQ&tabel=user&aksi=tambah', true);
+xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+xhr.onload = function () {
+    // do something to response
+    console.log(this.responseText);
+};
+xhr.send('NAMA=ABDUL+WAHAB&PASSWORD=12345');
 
 
 </script>
